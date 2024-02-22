@@ -71,7 +71,7 @@ with col2:
     st.markdown("# " + 'Searchy')
 
 
-st.subheader("An advanced E-comm search engine (text+image enabled search)")
+st.write("An advanced E-comm search engine (text+image enabled search)")
 # Search functionality
 search_query = st.text_input("Text Input", placeholder = "Search for items...", label_visibility = 'hidden')
 
