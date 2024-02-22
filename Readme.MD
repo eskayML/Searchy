@@ -13,6 +13,7 @@ Searchy makes use of both image and text data to make very accurate recommendati
 
 ![Searchy Multimodal](assets/searchy_multi.jpg)
 
-
+### Deployment
+Live Deployment : https://searchy.streamlit.app
 
 
