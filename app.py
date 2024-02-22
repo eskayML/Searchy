@@ -68,8 +68,10 @@ col1, col2, col3= st.columns(3)
 with col1:
     st.image('assets/searchy_logo.png',  width = 100)
 with col2:
-    st.markdown("## " + 'Searchy')
+    st.markdown("# " + 'Searchy')
 
+
+st.subheader("An advanced search engine (text+image enabled search)")
 # Search functionality
 search_query = st.text_input("Text Input", placeholder = "Search for items...", label_visibility = 'hidden')
 
