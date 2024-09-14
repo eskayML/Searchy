@@ -1,7 +1,7 @@
 import pandas as pd
 import json, ast
 
-df = pd.read_parquet('captioned_shein.parquet')
+df = pd.read_parquet('captioned_ecom.parquet')
 
 print(ast.literal_eval(df["description"].values[0]))
 for index,item in df.iterrows():

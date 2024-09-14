@@ -10,20 +10,20 @@ load_dotenv()
 
 
 co = cohere.Client(os.environ["CO_API_KEY"])
-df = pd.read_parquet('embeddings_shein.parquet')
+df = pd.read_parquet('embeddings_ecom.parquet')
 
 
 #  columns in data: name, description,price, cover_image
 
 def display_item_card(item):
-    desc = ast.literal_eval(item['description'])
+    # desc = ast.literal_eval(item['description'])
     st.markdown(
         f"""
         <div style="background-color:#f0f0f0; padding: 10px; border-radius: 10px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); flex: 0 0 20%; margin: 10px;">
-            <h2 style="color:#333333; text-align:center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{item['name']}</h2>
-            <img src="{item['cover_image']}" style="display:block; margin:auto; width:150px; border-radius:5px;">
-            <p style="color:green;margin-top:2em;text-align:center; font-style: italic;">{list(desc[1].items())[0][0]}: {list(desc[1].items())[0][1]}</p>
-            <p style="color:#333333; text-align:center; font-weight:bold;">Price: {item['price']}</p>
+            <h2 style="color:#333333; text-align:center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{item['brand']}</h2>
+            <img src="{item['img']}" style="display:block; margin:auto; width:150px; border-radius:5px;">
+            <p style="color:green;margin-top:2em;text-align:center; font-style: italic;">{item['title']}</p>
+            <p style="color:#333333; text-align:center; font-weight:bold;">Price: {item['Price']}</p>
         </div>
         """,
         unsafe_allow_html=True 
@@ -68,10 +68,11 @@ col1, col2, col3= st.columns(3)
 with col1:
     st.image('assets/searchy_logo.png',  width = 100)
 with col2:
-    st.markdown("# " + 'Searchy')
+    st.markdown("# " + 'Safe Search 🔗')
 
 
-st.write("An advanced E-comm search engine (text+image enabled search)")
+st.markdown("""An advanced E-comm search engine (text+image enabled search).
+            This mockup is for a ecommerce store that sells female clothing""")
 # Search functionality
 search_query = st.text_input("Text Input", placeholder = "Search for items...", label_visibility = 'hidden')
 
